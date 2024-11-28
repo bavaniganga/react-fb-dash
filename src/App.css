@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
+.fbdash {
+  width: 70%;
+  margin: 40px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header .edit-add-all {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* .lender-detailsbar {
+  background-color: rgb(248, 248, 248);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px 0px;
+  border-radius: 10px;
+} */
+
+.lender-detailsbar {
+  margin: 20px 0px;
+  padding: 10px 30px;
+  background-color: rgb(248, 248, 248);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 50px;
+  align-items: start;
+}
+
+.lender-detailsbar > div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.lender-detailsbar > div > p {
+  margin: 0;
+}
+
+header button {
+  border: none;
+  background-color: white;
+  padding: 6px;
+  margin: 5px;
+  font-family: Arial, sans-serif;
+}
+header button:hover {
+  background-color: rgb(209, 222, 245);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.phnumber,
+.userid {
+  background-color: #1976d2;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
   color: white;
+  font-size: 12px;
+}
+.usagebar div > select > option {
+  color: gray;
 }
 
-.App-link {
-  color: #61dafb;
+.usagebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-basis: 1fr;
+  gap: 20px;
+}
+.id {
+  font-size: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.usagebar > div {
+  border: 2px solid gray;
+  padding: 5px 5px;
+  border-radius: 3px;
+  color: gray;
+}
+.history {
+  background-color: rgb(251, 251, 251);
+  margin: 5px;
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+.history:hover {
+  background-color: rgb(238, 243, 251);
+}
+.history > p {
+  padding: 10px 50px;
+  margin: 0px;
+}
+select {
+  border: none;
+  outline: none; /* Remove focus outline */
+  width: 100%;
+  font-size: 14px;
+  background-color: transparent;
+}
+.customer-history {
+  border: 1px solid #ccc;
+  border: none;
+}
+.usage-history-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 30px;
+  gap: 10%;
+}
+.organization-details {
+  padding: 5px;
+}
+.organization-details div {
+  padding: 1px 0px;
+  margin: 20px;
+  background-color: rgb(251, 251, 251);
+}
+.organization-details div:hover {
+  background-color: rgb(238, 243, 251);
+}
+h2 {
+  text-align: center;
+}
+li{
+  padding: 3px 0px;
+}
+.history > strong > img {
+  vertical-align: middle;
+}
+.highlighted-div {
+  border: 1px solid blue;
 }
