@@ -1,5 +1,5 @@
 .fbdash {
-  width: 70%;
+  width: 80%;
   margin: 40px auto;
 }
 
@@ -142,4 +142,63 @@ li{
 }
 .highlighted-div {
   border: 1px solid blue;
+}
+
+@media (max-width: 768px) {
+  .fbdash{
+    width: 100%;
+  }
+  .usage-history-details {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2px;
+  }
+
+  .organization-details strong{
+    font-size: 13px;
+  }
+  .organization-details div{
+    margin: 0px;
+  }
+
+  .history-table{
+        padding: 0px;
+        margin: 0px;
+  }
+  .usage-history-details h2 {
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .customer-history {
+    padding: 8px;
+  }
+
+  .usage-history-details h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .history {
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px;
+  }
+
+  .history strong {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .history img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .history p {
+    font-size: 12px;
+    text-align: center;
+  }
 }

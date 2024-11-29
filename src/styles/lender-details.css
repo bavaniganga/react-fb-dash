@@ -1,0 +1,77 @@
+.lender-detailsbar {
+  margin: 20px 0px;
+  padding: 10px 30px;
+  background-color: rgb(248, 248, 248);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 50px;
+  align-items: start;
+}
+
+.lender-detailsbar > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.lender-detailsbar > div > p {
+  margin: 0;
+}
+
+.phnumber,
+.userid {
+  background-color: #1976d2;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 10px;
+}
+.lender-detailsbar:hover{
+  background-color:rgb(238, 238, 238) ;
+}
+
+@media (max-width: 768px) {
+  .lender-detailsbar {
+    grid-template-columns: 1fr; /* Stack items vertically */
+    gap: 3px;
+  }
+
+  .name-id {
+    grid-column: span 1;
+  }
+
+  .name-id p {
+    font-size: 14px;
+  }
+
+  .lender-detailsbar div {
+    margin-bottom: 6px;
+  }
+
+  button {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+}
+
+/* Further optimization for smaller screens (e.g., phones under 480px) */
+@media (max-width: 480px) {
+  .lender-detailsbar {
+    padding: 20px;
+  }
+
+  .name-id p {
+    font-size: 12px;
+  }
+  .name-id >p >strong{
+      font-size: 16px;
+  }
+
+  button {
+    font-size: 9px;
+    margin: 0px;
+  }
+}

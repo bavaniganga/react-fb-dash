@@ -1,0 +1,46 @@
+@media (max-width: 768px) {
+  .customer-history {
+    padding: 12px;
+  }
+
+  .history strong {
+    font-size: 14px;
+  }
+
+  .history p {
+    font-size: 12px;
+  }
+
+  .history img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .customer-history {
+    padding: 8px;
+  }
+
+
+  .history {
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px;
+  }
+
+  .history strong {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .history img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .history p {
+    font-size: 12px;
+    text-align: center;
+  }
+}

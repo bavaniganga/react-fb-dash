@@ -8,6 +8,8 @@ import { IoMdInformationCircle } from "react-icons/io";
 import { data } from "./constants/data";
 import DateComponent from "./components/UTCtimechange-to-indian";
 import TimeChangeComponent from "./components/millisec-indian-component.js";
+import LenderDetails from './components/lender-details';
+import LenderHistory from './components/lender-history.js';
 
 function App() {
 
@@ -224,7 +226,8 @@ function App() {
             />
           </h2>
           <hr />
-          <div className="history-table">
+          <div>
+          {/* <div className="history-table">
             <div className="history">
               <strong>
                 <img src="/dollaricon.png" alt="icon" width="20px" /> Purchased
@@ -285,6 +288,8 @@ function App() {
                 <DateComponent date={data.first_seen} />
               </p>
             </div>
+          </div> */}
+          <LenderHistory />
           </div>
         </div>
       </div>
