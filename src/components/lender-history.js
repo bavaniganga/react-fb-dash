@@ -2,7 +2,7 @@ import React from "react";
 import { data } from "../constants/data";
 import DateComponent from "../components/UTCtimechange-to-indian";
 import TimeChangeComponent from "../components/millisec-indian-component.js";
-// import "../styles/lender-history.css";
+import "../styles/lender-history.css";
  
 
 const LenderHistory = () =>{

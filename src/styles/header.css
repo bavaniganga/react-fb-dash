@@ -1,0 +1,27 @@
+header .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .edit-add-all {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+header button {
+  border: none;
+  background-color: white;
+  padding: 6px;
+  margin: 5px;
+  font-family: Arial, sans-serif;
+}
+header button:hover {
+  background-color: rgb(209, 222, 245);
+  border-radius: 5px;
+  cursor: pointer;
+}
+

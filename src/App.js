@@ -1,8 +1,6 @@
-import "./App.css";
+// import "./App.css";
+import "./styles/app.css";
 import React, { useState } from "react";
-import { IoMdRefresh } from "react-icons/io";
-import { MdOutlineEdit } from "react-icons/md";
-import { MdOutlineDeleteOutline } from "react-icons/md";
 import Button from "@mui/material/Button";
 import { IoMdInformationCircle } from "react-icons/io";
 import { data } from "./constants/data";
@@ -10,106 +8,29 @@ import DateComponent from "./components/UTCtimechange-to-indian";
 import TimeChangeComponent from "./components/millisec-indian-component.js";
 import LenderDetails from './components/lender-details';
 import LenderHistory from './components/lender-history.js';
+import HeaderComponent from "./components/headercomponent.js";
 
 function App() {
 
   const[state, setState] = useState("");
   const[quality, setQuality] =useState("");
   const[funnelstage, setFunnelstage] = useState("");
+  const[dealsize,setDealsize] = useState("");
+  const[teamsize, setTeamsize] = useState("");
 
-  const copyToClipboard = (text) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        alert(`Copied to clipboard: ${text}`);
-      })
-      .catch((err) => {
-        console.error("Failed to copy: ", err);
-      });
-  }
+ 
   const personaDetails =
     data.loan_data?.data[0]?.[data.original_app_user_id]?.personaDetails;
 
   return (
     <div className="fbdash">
       <header>
-        <div className="buttons">
-          <button className="back">BACK</button>
-          <div className="edit-and-all">
-            <button>
-              <MdOutlineEdit color="blue" style={{ verticalAlign: "middle" }} />{" "}
-              EDIT
-            </button>
-            <button>
-              <MdOutlineDeleteOutline
-                color="red"
-                style={{ verticalAlign: "middle" }}
-              />{" "}
-              DELETE
-            </button>
-            <button>
-              <IoMdRefresh color="blue" style={{ verticalAlign: "middle" }} />{" "}
-              REFRESH
-            </button>
-          </div>
-        </div>
+        <HeaderComponent />
       </header>
 
-      <div className="lender-detailsbar">
-        <div className="name-id">
-          <p>
-            <strong>{data.name}</strong>
-          </p>
-          <p>
-            {data.mobileNumber}{" "}
-            <span>
-              <button
-                className="phnumber"
-                onClick={() => copyToClipboard(data.mobileNumber)}
-              >
-                Copy
-              </button>
-            </span>
-          </p>
-          <p className="id">
-            {data.app_user_id}{" "}
-            <span>
-              <button
-                className="userid"
-                onClick={() => copyToClipboard(data.app_user_id)}
-              >
-                Copy
-              </button>
-            </span>
-          </p>
-        </div>
-
-        <div>
-          <p>
-            <strong>Country</strong>
-          </p>
-          <p>{data.country_code ? data.country_code : "NA"}</p>
-        </div>
-
-        <div>
-          <p>
-            <strong>Lead-type</strong>
-          </p>
-          <p>{data.lenderType}</p>
-        </div>
-
-        <div>
-          <p>
-            <strong>Price</strong>
-          </p>
-          <p>{data.price}</p>
-        </div>
-        <div>
-          <p>
-            <strong>Last-seen</strong>
-          </p>
-          <DateComponent date={data.last_seen} />
-        </div>
+     
+      <div className="lender-details">
+        <LenderDetails />
       </div>
 
       <div className="usagebar">
@@ -148,8 +69,22 @@ function App() {
             <option>InActive</option>
           </select>
         </div>
-        <div>Deal Size</div>
-        <div>Team Size</div>
+        <div>
+          <input
+          value={dealsize}
+          onChange={(e) => setDealsize(e.target.value)} 
+          required
+          placeholder="Deal Size"
+          />
+          </div>
+        <div>
+          <input 
+          value={teamsize}
+          onChange={(e)=> setTeamsize(e.target.value)}
+          required
+          placeholder="Team Size"
+          />
+          </div>
 
         <Button variant="contained" size="small" className="copy">
           save
@@ -212,7 +147,7 @@ function App() {
                 </li>
               </ul>
             ) : (
-              <p>No Persona Details Found</p>
+              <p>No Personal Details Found</p>
             )}
           </div>
         </div>
@@ -227,68 +162,7 @@ function App() {
           </h2>
           <hr />
           <div>
-          {/* <div className="history-table">
-            <div className="history">
-              <strong>
-                <img src="/dollaricon.png" alt="icon" width="20px" /> Purchased
-                a {data.entitlement_id} plan
-              </strong>
-              <p>
-                <DateComponent
-                  date={data.entitlements.professional.purchase_date}
-                />
-              </p>
-            </div>
-
-            <div className="history">
-              <strong>
-                <img src="/dollaricon.png" alt="icon" width="20px" /> premium
-                subscription
-              </strong>
-              <p> date</p>
-            </div>
-
-            <div className="history">
-              <strong>
-                <img src="/personicon.png" alt="icon" width="20px" /> Last
-                opened the app
-              </strong>
-
-              <p>
-                <DateComponent date={data.last_seen} />{" "}
-              </p>
-            </div>
-
-            <div className="history">
-              <strong>
-                <img src="/plusicon.png" alt="icon" width="20px" /> Trail
-                Expired
-              </strong>
-              <p> date</p>
-            </div>
-            <div className="history">
-              <strong>
-                <img src="/plusicon.png" alt="icon" width="20px" /> Trail Taken
-              </strong>{" "}
-              {data.product_id
-                ? data.product_id === "rc_promo_professional_weekly"
-                  ? "Professional"
-                  : "Premium"
-                : ""}
-              <p>
-                <TimeChangeComponent time={data.purchased_at_ms} />
-              </p>
-            </div>
-            <div className="history">
-              <strong>
-                <img src="/personicon.png" alt="icon" width="20px" /> First seen
-                using the app
-              </strong>
-              <p>
-                <DateComponent date={data.first_seen} />
-              </p>
-            </div>
-          </div> */}
+          
           <LenderHistory />
           </div>
         </div>
