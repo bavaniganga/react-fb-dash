@@ -9,6 +9,7 @@ import TimeChangeComponent from "./components/millisec-indian-component.js";
 import LenderDetails from './components/lender-details';
 import LenderHistory from './components/lender-history.js';
 import HeaderComponent from "./components/headercomponent.js";
+import OrganizationDetails from "./components/organization-details.js";
 
 function App() {
 
@@ -19,8 +20,8 @@ function App() {
   const[teamsize, setTeamsize] = useState("");
 
  
-  const personaDetails =
-    data.loan_data?.data[0]?.[data.original_app_user_id]?.personaDetails;
+  // const personaDetails =
+  //   data.loan_data?.data[0]?.[data.original_app_user_id]?.personaDetails;
 
   return (
     <div className="fbdash">
@@ -92,7 +93,7 @@ function App() {
       </div>
 
       <div className="usage-history-details">
-        <div className="organization-details">
+        {/* <div className="organization-details">
           <h2>Current Usage</h2>
           <hr />
           <div>
@@ -150,7 +151,8 @@ function App() {
               <p>No Personal Details Found</p>
             )}
           </div>
-        </div>
+        </div> */}
+        <OrganizationDetails />
 
         <div className="customer-history">
           <h2>

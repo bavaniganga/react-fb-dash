@@ -3,33 +3,6 @@
   margin: 40px auto;
 }
 
-/* header .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-header .edit-add-all {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-
-header button {
-  border: none;
-  background-color: white;
-  padding: 6px;
-  margin: 5px;
-  font-family: Arial, sans-serif;
-}
-header button:hover {
-  background-color: rgb(209, 222, 245);
-  border-radius: 5px;
-  cursor: pointer;
-}*/
-
 .phnumber,
 .userid {
   background-color: #1976d2;
@@ -101,6 +74,7 @@ select {
   padding: 1px 0px;
   margin: 20px;
   background-color: rgb(251, 251, 251);
+  border-radius: 5px;
 }
 .organization-details div:hover {
   background-color: rgb(238, 243, 251);
