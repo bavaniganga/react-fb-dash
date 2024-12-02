@@ -52,7 +52,7 @@
 
 import React from "react";
 
-const DateComponent = ({ date }) => {
+const DateComponent = ({ date, showTime = false }) => {
   if (!date) {
     console.error("Invalid `date` prop:", date);
     return <div>No valid data provided</div>;
@@ -77,23 +77,32 @@ const DateComponent = ({ date }) => {
     diffInDays === 0 ? "Today" : rtf.format(-diffInDays, "day");
 
   // Format the date in IST without the comma after the day
-  const options = {
+  const dateoptions = {
     timeZone: "Asia/Kolkata", // Set to IST
     year: "numeric",
     month: "short",
     day: "numeric",
+    // hour: "2-digit",
+    // minute: "2-digit",
+    // hour12: true,
+  };
+  const timeOptions = {
+    timeZone: "Asia/Kolkata",
     hour: "2-digit",
     minute: "2-digit",
     hour12: true,
   };
 
   const formattedDate = parsedDate
-    .toLocaleString("en-IN", options)
+    .toLocaleString("en-IN", dateoptions)
     .replace(/, (\d{4})$/, " $1"); // Remove comma before the year
+  const formattedTime = parsedDate.toLocaleString("en-IN", timeOptions);
 
   return (
     <div>
-      <div>{formattedDate}</div>
+      <div>{formattedDate}, {" "}
+      {showTime && <span>{formattedTime}</span>}
+      </div>
       <div style={{ color: "red" }}>{relativeTime}</div>
     </div>
   );

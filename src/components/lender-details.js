@@ -80,7 +80,7 @@ const LenderDetails = () => {
         <p>
           <strong>Last-seen</strong>
         </p>
-        <DateComponent date={data.last_seen} />
+        <DateComponent date={data.last_seen} showTime={true} />
       </div>
     </div>
   );

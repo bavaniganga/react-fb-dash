@@ -21,10 +21,10 @@ const TimeChangeComponent = ({ time }) => {
     year: "numeric",
     month: "short",
     day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: true,
+    // hour: "2-digit",
+    // minute: "2-digit",
+    // second: "2-digit",
+    // hour12: true,
   };
   const formattedDate = date.toLocaleString("en-IN", options);
 
@@ -48,12 +48,7 @@ const TimeChangeComponent = ({ time }) => {
           {daysAgo} {daysAgo === 1 ? "day ago" : "days ago"}
         </div>
       )}
-      {/* <div style={{ marginTop: "10px" }}>
-        Expiry Date: {formattedExpiryDate}
-        {isExpired && (
-          <span style={{ color: "red", marginLeft: "10px" }}>Expired</span>
-        )}
-      </div> */}
+      
     </div>
   );
 };
