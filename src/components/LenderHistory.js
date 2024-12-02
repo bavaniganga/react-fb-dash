@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { data } from "../constants/data";
-import DateComponent from "./UTCdatechange-to-indian.js";
-import TimeChangeComponent from "../components/millisec-indian-component.js";
+import { data } from "../constants/data.js";
+import DateComponent from "./UTCdatechangeToIndian.js";
+import TimeChangeComponent from "./MillisecTimeChangeComponent.js";
 import "../styles/lender-history.css";
 
 const LenderHistory = () => {

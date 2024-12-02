@@ -4,12 +4,12 @@ import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import { IoMdInformationCircle } from "react-icons/io";
 import { data } from "./constants/data";
-import DateComponent from "./components/UTCdatechange-to-indian.js";
-import TimeChangeComponent from "./components/millisec-indian-component.js";
-import LenderDetails from "./components/lender-details";
-import LenderHistory from "./components/lender-history.js";
-import HeaderComponent from "./components/headercomponent.js";
-import OrganizationDetails from "./components/organization-details.js";
+import DateComponent from "./components/UTCdatechangeToIndian.js";
+import TimeChangeComponent from "./components/MillisecTimeChangeComponent.js";
+import LenderDetails from "./components/LenderDetails.js";
+import LenderHistory from "./components/LenderHistory.js";
+import Topnavbar from "./components/HeaderComponent.js";
+import OrganizationDetails from "./components/OrganizationDetails.js";
 
 function App() {
   const [state, setState] = useState("");
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="fbdash">
       <header>
-        <HeaderComponent />
+        <Topnavbar />
       </header>
 
       <div className="lender-details">
@@ -90,7 +90,6 @@ function App() {
       </div>
 
       <div className="usage-history-details">
-        
         <OrganizationDetails />
 
         <div className="customer-history">

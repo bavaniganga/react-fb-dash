@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { data } from "../constants/data";
-import DateComponent from "./UTCdatechange-to-indian";
+import DateComponent from "./UTCdatechangeToIndian";
 import "../styles/lender-details.css";
 import { FaCheck } from "react-icons/fa6";
 
@@ -23,7 +23,6 @@ const LenderDetails = () => {
         console.error("Failed to copy: ", err);
       });
   };
-
 
   return (
     <div className="lender-detailsbar">

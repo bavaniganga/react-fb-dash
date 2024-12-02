@@ -5,7 +5,7 @@ import { MdOutlineEdit } from "react-icons/md";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 
 
-const HeaderComponent = (e) =>{
+const Topnavbar = (e) =>{
 
     return (
       <div>
@@ -32,4 +32,4 @@ const HeaderComponent = (e) =>{
       </div>
     );
 }
-export default HeaderComponent;
+export default Topnavbar;
