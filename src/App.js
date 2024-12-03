@@ -10,6 +10,7 @@ import LenderDetails from "./components/LenderDetails.js";
 import LenderHistory from "./components/LenderHistory.js";
 import Topnavbar from "./components/HeaderComponent.js";
 import OrganizationDetails from "./components/OrganizationDetails.js";
+import DropdownSelect from "./components/DropdownSelect.js";
 
 function App() {
   const [state, setState] = useState("");
@@ -18,8 +19,32 @@ function App() {
   const [dealsize, setDealsize] = useState("");
   const [teamsize, setTeamsize] = useState("");
 
-  // const personaDetails =
-  //   data.loan_data?.data[0]?.[data.original_app_user_id]?.personaDetails;
+  
+  const stateOptions = [
+    { value: "Todo", label: "Todo" },
+    { value: "Nurture", label: "Nurture" },
+    { value: "Disqualified", label: "Disqualified" },
+    { value: "Inactive", label: "Inactive" },
+    { value: "Upsell", label: "Upsell" },
+    { value: "Won", label: "Won" },
+    { value: "PaymentMissing", label: "Payment Missing" },
+  ];
+
+  const qualityOptions = [
+    { value: "Unsure", label: "Unsure" },
+    { value: "Prem", label: "Prem" },
+    { value: "Prof", label: "Prof" },
+    { value: "Team", label: "Team" },
+    { value: "Spam", label: "Spam" },
+  ];
+
+  const funnelStage = [
+    { value: "ToFu", label: "ToFu" },
+    { value: "MoFu", label: "MoFu" },
+    { value: "BoFu", label: "BoFu" },
+    { value: "Closed", label: "Closed" },
+    { value: "InActive", label: "Inactive" },
+  ];
 
   return (
     <div className="fbdash">
@@ -31,63 +56,53 @@ function App() {
         <LenderDetails />
       </div>
 
-      <div className="usagebar">
-        <div>
-          <select value={state} onChange={(e) => setState(e.target.value)}>
-            <option>Set State</option>
-            <option> Todo</option>
-            <option>Nurture</option>
-            <option>Disqualified</option>
-            <option>Inactive</option>
-            <option>Upsell</option>
-            <option>Won</option>
-            <option>PaymentMissing</option>
-          </select>
-        </div>
-        <div>
-          <select value={quality} onChange={(e) => setQuality(e.target.value)}>
-            <option>Set Quality</option>
-            <option>Unsure</option>
-            <option>Prem</option>
-            <option>Prof</option>
-            <option>Team</option>
-            <option>Spam</option>
-          </select>
-        </div>
-        <div>
-          <select
-            value={funnelstage}
-            onChange={(e) => setFunnelstage(e.target.value)}
-          >
-            <option>Funnel stage</option>
-            <option>ToFu</option>
-            <option>MoFu</option>
-            <option>BoFu</option>
-            <option>Closed</option>
-            <option>InActive</option>
-          </select>
-        </div>
-        <div>
-          <input
-            value={dealsize}
-            onChange={(e) => setDealsize(e.target.value)}
-            required
-            placeholder="Deal Size"
-          />
-        </div>
-        <div>
-          <input
-            value={teamsize}
-            onChange={(e) => setTeamsize(e.target.value)}
-            required
-            placeholder="Team Size"
-          />
-        </div>
+        <div className="usagebar">
+          <div>
+            <DropdownSelect
+              defaultLabel="Set State"
+              value={state}
+              onChange={(e) => setState(e)}
+              options={stateOptions}
+            />
+          </div>
+          <div>
+             <DropdownSelect
+              defaultLabel="Set Quality"
+              value={quality}
+              onChange={(e) => setQuality(e)}
+              options={qualityOptions}
+            />
+          </div>
+          <div>
+            <DropdownSelect
+              defaultLabel="Funnel stage"
+              value={funnelstage}
+              onChange={(e) => setFunnelstage(e)}
+              options={funnelStage}
+            />
+          </div>
+          <div>
+            <input
+              value={dealsize}
+              onChange={(e) => setDealsize(e.target.value)}
+              required
+              placeholder="Deal Size"
+            />
+          </div>
+          <div>
+            <input
+              value={teamsize}
+              onChange={(e) => setTeamsize(e.target.value)}
+              required
+              placeholder="Team Size"
+            />
+          </div>
 
-        <Button variant="contained" size="small" className="copy">
-          save
-        </Button>
-      </div>
+          <Button variant="contained" size="small" className="copy">
+            save
+          </Button>
+        </div>
+      
 
       <div className="usage-history-details">
         <OrganizationDetails />

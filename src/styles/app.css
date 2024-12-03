@@ -3,15 +3,7 @@
   margin: 40px auto;
 }
 
-.phnumber,
-.userid {
-  background-color: #1976d2;
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 12px;
-} 
+
 .usagebar div > select > option {
   color: gray;
 }
@@ -37,19 +29,7 @@
   border: none;
   outline: none;
 }
-/* .history {
-  background-color: rgb(251, 251, 251);
-  margin: 5px;
-  padding: 10px 30px;
-  border-radius: 10px;
-}
-.history:hover {
-  background-color: rgb(238, 243, 251);
-}
-.history > p {
-  padding: 10px 50px;
-  margin: 0px;
-} */
+
 select {
   border: none;
   outline: none; /* Remove focus outline */

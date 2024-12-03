@@ -1,10 +1,15 @@
-header .buttons {
+/* header .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+.top-navbar{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-header .edit-add-all {
+ .action-group {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -12,14 +17,14 @@ header .edit-add-all {
 }
 
 
-header button {
+ header button {
   border: none;
   background-color: white;
   padding: 6px;
   margin: 5px;
   font-family: Arial, sans-serif;
 }
-header button:hover {
+ header button:hover {
   background-color: rgb(209, 222, 245);
   border-radius: 5px;
   cursor: pointer;
