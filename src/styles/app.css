@@ -40,6 +40,7 @@ select {
 .customer-history {
   border: 1px solid #ccc;
   border: none;
+  padding:0px 20px;
 }
 .usage-history-details {
   display: grid;
@@ -51,17 +52,14 @@ select {
   padding: 5px;
 }
 .organization-details div {
-  padding: 1px 0px;
+  padding: 1px 20px;
   margin: 20px;
   background-color: rgb(251, 251, 251);
   border-radius: 5px;
 }
 .organization-details div:hover {
   background-color: rgb(238, 243, 251);
-}
-h2 {
-  text-align: center;
-}
+} 
 li{
   padding: 3px 0px;
 }
