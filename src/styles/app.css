@@ -2,7 +2,24 @@
   width: 80%;
   margin: 40px auto;
 }
-
+.user {
+  margin: 30px;
+}
+.useridinput{
+  padding: 5px;
+  margin: 10px;
+}
+.subbtn{
+  color:white;
+  background-color: #1976d2;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+}
+.subbtn:hover{
+  cursor: pointer;
+  background-color: #14589c ;
+}
 
 .usagebar div > select > option {
   color: gray;
@@ -54,11 +71,11 @@ select {
 .organization-details div {
   padding: 1px 20px;
   margin: 20px;
-  background-color: rgb(251, 251, 251);
+  background-color: rgb(228, 236, 259);
   border-radius: 5px;
 }
 .organization-details div:hover {
-  background-color: rgb(238, 243, 251);
+  background-color: rgb(228, 236, 259);
 } 
 li{
   padding: 3px 0px;

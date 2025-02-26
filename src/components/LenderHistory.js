@@ -1,13 +1,47 @@
 import React, { useState, useEffect } from "react";
-import { data } from "../constants/data.js";
+// import { data } from "../constants/data.js";
 import DateComponent from "./UTCdatechangeToIndian.js";
 import TimeChangeComponent from "./MillisecTimeChangeComponent.js";
 import "../styles/lender-history.css";
 
-const LenderHistory = () => {
+const LenderHistory = (data) => {
+  // const [customerDetailsResponse, setCustomerDetailsResponse] =
+  //   useState(undefined);
+  // // const [firstItem, setFirstItem] = useState(undefined);
   const [historyItems, setHistoryItems] = useState([]);
+  // const [isLoading, setLoading] = useState(false);
 
-  useEffect(() => {
+  // const getHistory = async () => {
+  //   // Fetch API call
+  //   // Check if it is success or failure
+  //   // update historyItems using set method
+  //   setLoading(true);
+  //   const response = await fetch(
+  //     "https://fb-sales-dashboard-backend.onrender.com/api/v1/sales/",
+  //     {
+  //       method: "GET",
+  //       headers: {
+  //         Authorization: `Bearer ey5JhbGciOiJ85IUz3I1NiI34sInR5cC`,
+  //         "Content-Type": "application/json",
+  //       },
+  //     }
+  //   );
+
+  //   if (!response.ok) {
+  //     // Handle error
+  //     setLoading(false);
+  //     return;
+  //   }
+  //   const json = await response.json();
+  //   setCustomerDetailsResponse(json); 
+  //   setLoading(false);
+  // };
+
+  // useEffect(() => {
+  //   getHistory();
+  // }, []);
+
+  const prepareAndSetHistoryItems = (data) => {
     const durationInMs = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
     const expiryTime = data.expiration_at_ms
       ? data.expiration_at_ms
@@ -76,6 +110,12 @@ const LenderHistory = () => {
     }));
 
     setHistoryItems(itemsWithUniqueKeys);
+  };
+
+  useEffect(() => {
+    if (data) {
+      prepareAndSetHistoryItems(data);
+    }
   }, [data]);
 
   return (

@@ -2,13 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(251, 251, 251);
+  background-color: rgb(228, 236, 259);
   margin: 5px;
   padding: 10px 10px;
   border-radius: 10px;
 }
 .history:hover {
-  background-color: rgb(238, 243, 251);
+  background-color: rgb(228, 236, 259);
 }
 .history > p {
   padding: 10px 50px;

@@ -1,6 +1,5 @@
-
 import React from "react";
-import { data } from "../constants/data";
+// import { data } from "../constants/data";
 // import "../styles/organization-details.css";
 
 const DetailCard = ({ title, details }) => (
@@ -22,12 +21,11 @@ const DetailCard = ({ title, details }) => (
   </div>
 );
 
-const OrganizationDetails = () => {
+const OrganizationDetails = (data) => {
   const personaDetails =
-    data.loan_data?.data[0]?.[data.original_app_user_id]?.personaDetails;
+    data?.loan_data?.data[0]?.[data.app_user_id]?.personaDetails;
 
-  const description =
-    data.loan_data?.data[0]?.[data.original_app_user_id]?.description;
+  const description = data?.loan_data?.data[0]?.[data.app_user_id]?.description;
 
   const descriptionDetails = description
     ? [
@@ -78,8 +76,3 @@ const OrganizationDetails = () => {
 };
 
 export default OrganizationDetails;
-
-
-
-
-

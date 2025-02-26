@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { data } from "../constants/data";
+import React, { useState, useEffect } from "react";
 import DateComponent from "./UTCdatechangeToIndian";
 import "../styles/lender-details.css";
 import { FaCheck } from "react-icons/fa6";
@@ -34,14 +33,18 @@ const DetailCard = ({ label, value, isCopyable, onCopy }) => {
   );
 };
 
-const LenderDetails = () => {
+const LenderDetails = ({ userId, data }) => {
   const otherDetails = [
-    { label: "Country", value: data.country_code },
-    { label: "Lead Type", value: data.lenderType },
-    { label: "Price", value: data.price },
+    { label: "Country", value: data?.country_code || "NA" },
+    { label: "Lead Type", value: data?.lenderType || "NA" },
+    { label: "Price", value: data?.price || "NA" },
     {
       label: "Last Seen",
-      value: <DateComponent date={data.last_seen} showTime={true} />,
+      value: data?.last_seen ? (
+        <DateComponent date={data?.last_seen} showTime={true} />
+      ) : (
+        "NA"
+      ),
     },
   ];
 
@@ -53,32 +56,30 @@ const LenderDetails = () => {
 
   return (
     <div className="lender-detailsbar">
-      {/* Grouped Div for Name, Mobile Number, and User ID */}
       <div className="name-id">
         <p>
-          <strong>{data.name}</strong>
+          <strong>{data?.name}</strong>
         </p>
         <p>
-          {data.mobileNumber}{" "}
+          {data?.mobileNumber}{" "}
           <button
             className="phnumber"
-            onClick={() => copyToClipboard(data.mobileNumber)}
+            onClick={() => copyToClipboard(data?.mobileNumber)}
           >
             Copy
           </button>
         </p>
         <p>
-          {data.app_user_id}{" "}
+          {data?.app_user_id}{" "}
           <button
             className="userid"
-            onClick={() => copyToClipboard(data.app_user_id)}
+            onClick={() => copyToClipboard(data?.app_user_id)}
           >
             Copy
           </button>
         </p>
       </div>
 
-      {/* Render Remaining Details */}
       {otherDetails.map(({ label, value }, index) => (
         <DetailCard key={index} label={label} value={value} />
       ))}
@@ -87,7 +88,3 @@ const LenderDetails = () => {
 };
 
 export default LenderDetails;
-
-
-
-
